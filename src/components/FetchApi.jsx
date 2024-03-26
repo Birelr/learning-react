@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import React from "react";
 import { useEffect, useState } from "react";
 import loadingicon from "../assets/loadings.png";
