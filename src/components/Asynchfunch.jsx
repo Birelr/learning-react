@@ -71,9 +71,20 @@ const Asynchfunch = () => {
               initial={{ opacity: 0, y: "-50%" }}
               animate={{ opacity: 1, y: "0%" }}
               exit={{ opacity: 0, y: "-50%" }}
-              className="text-left p-4 bg-transparentblack rounded-xl mt-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              className="text-left p-4 bg-transparentblack rounded-xl mt-4 absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2"
             >
-              <h2 className="text-white">Posts for User {selectedUserId}</h2>
+              <div className="flex justify-between items-center">
+                <h2 className="text-white pt-4 pl-5">
+                  Posts for User {selectedUserId}
+                </h2>
+                <button
+                  className="text-white bg-red-600 px-4 py-2 mt-4 rounded"
+                  onClick={handleCloseCard}
+                >
+                  Close
+                </button>
+              </div>
+
               <ul className="mt-4 p-10 space-y-2">
                 {posts.map((post) => (
                   <li key={post.id} className="text-white list-decimal">
@@ -81,12 +92,6 @@ const Asynchfunch = () => {
                   </li>
                 ))}
               </ul>
-              <button
-                className="text-white bg-red-600 px-4 py-2 mt-4 rounded"
-                onClick={handleCloseCard}
-              >
-                Close
-              </button>
             </motion.div>
           )}
         </AnimatePresence>
